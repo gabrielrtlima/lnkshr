@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+motor
+python-dotenv
+alembic
+sqlalchemy
+asyncpg
+psycopg2-binary==2.9.9
