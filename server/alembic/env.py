@@ -1,4 +1,3 @@
-import os
 from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
@@ -13,11 +12,7 @@ config = context.config
 
 # Interprete a seção [alembic] no arquivo alembic.ini
 # e substitua as configurações do sqlalchemy.url com a DATABASE_URL do settings
-# Adicione esse código para usar a URL do banco de dados correta
-db_url = os.environ.get("DATABASE_URL_NEW") or os.environ.get(
-    "DATABASE_URL", ""
-).replace("postgres://", "postgresql://")
-config.set_main_option("sqlalchemy.url", db_url)
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL_NEW)
 
 # Adicione seu modelo MetaData aqui
 # para 'autogenerate' suportar a criação de tabelas
